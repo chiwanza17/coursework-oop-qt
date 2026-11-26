@@ -1,0 +1,16 @@
+#include "ConsoleUI.h"
+#include "FileStorage.h"
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
+int main() {
+#ifdef _WIN32
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+    FileStorage storage("data/contacts.txt");
+    ConsoleUI app(storage);
+    app.run();
+    return 0;
+}
