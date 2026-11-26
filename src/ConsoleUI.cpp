@@ -61,7 +61,11 @@ std::string ConsoleUI::askBirthDate() {
 PhoneNumber ConsoleUI::askPhone() {
     std::string number;
     while (true) {
-        number = readLine("Phone (+78121234567 or 8(812)123-45-67): ");
+        number = readLine("Phone formats:\n"
+                          "  +78121234567, 88121234567\n"
+                          "  +7(812)1234567, 8(812)1234567\n"
+                          "  +7(812)123-45-67, 8(812)123-45-67\n"
+                          "Phone: ");
         if (ContactValidator::validPhone(number)) break;
         std::cout << "Invalid phone format.\n";
     }

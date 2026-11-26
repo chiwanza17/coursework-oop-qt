@@ -3,4 +3,4 @@
 *.obj
 *.pdb
 .vscode/
-data/contacts.txt
+/data/
